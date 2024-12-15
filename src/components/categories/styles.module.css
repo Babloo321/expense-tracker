@@ -1,0 +1,15 @@
+.categories{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-width: 80%;
+  max-width: 70%;
+  min-height: 81vh;
+  max-height: auto;
+  overflow: hidden;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--text-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--text-color);
+}

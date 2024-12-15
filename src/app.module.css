@@ -1,0 +1,11 @@
+.container {
+  min-height: 50vh;
+  max-height: auto;
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Full width of the viewport */
+  margin: auto;
+  overflow: hidden; /* Prevents scrolling if content overflows */
+  font-family: Arial, sans-serif; /* Consistent font */
+}
+

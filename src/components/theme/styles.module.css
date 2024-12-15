@@ -1,0 +1,9 @@
+
+.theme_toggle_button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: var(--text-color);
+}

@@ -3,8 +3,7 @@ import styles from './styles.module.css';
 
 const Budget = () => {
   const [budget, setBudget] = useState(0);
-  const [label, setLabel] = useState('');
-  const [amount, setAmount] = useState(0);
+  // const [amount, setAmount] = useState(0);
 
   const handleBudget = (e) => {
     setBudget(parseFloat(e.target.value));
@@ -12,30 +11,32 @@ const Budget = () => {
 
   const handleBudgetAdd = (e) => {
     e.preventDefault();
-    localStorage.setItem("budget", JSON.stringify(budget));
+    // localStorage.setItem("budget", JSON.stringify(budget));
+    let prevVal = parseFloat(localStorage.getItem("budget")) || 0;
+    let updatedBudget = parseFloat(prevVal) + parseFloat(budget) || prevVal + parseFloat(budget);
+    localStorage.setItem("budget", updatedBudget);
     setBudget(0);
   };
 
-  const handleAmount = (e) => {
-    setAmount(parseFloat(e.target.value));
-    localStorage.setItem("amount", JSON.stringify(amount));
-    setAmount(0);
-    setLabel('');
-  };
+  // const handleAmount = (e) => {
+  //   setAmount(parseFloat(e.target.value));
+  //   localStorage.setItem("amount", JSON.stringify(amount));
+  //   setAmount(0);
+  //   setLabel('');
+  // };
 
-  const handleAddToBudget = () => {
-    let prevVal = parseFloat(localStorage.getItem("budget")) || 0;
-    let updatedBudget = prevVal + amount;
-    localStorage.setItem("budget", updatedBudget);
-  };
+  // const handleAddToBudget = () => {
+  //   let prevVal = parseFloat(localStorage.getItem("budget")) || 0;
+  //   let updatedBudget = parseFloat(prevVal) + parseFloat(budget) || prevVal + parseFloat(budget);
+  //   localStorage.setItem("budget", updatedBudget);
+  // };
 
   const handleResetBudget = () => {
     setBudget(0);
-    setAmount(0);
-    setLabel('');
+    // setAmount(0);
+    // setLabel('');
     localStorage.setItem("budget", 0);
     localStorage.setItem("amount", 0);
-    localStorage.setItem("label", '');
   };
 
   return (
@@ -58,7 +59,7 @@ const Budget = () => {
           </button>
         </div>
         <hr />
-        <div className={styles.box}>
+        {/* <div className={styles.box}>
           <h2>Add an Income Source</h2>
           <p>Adds on to your current income / budget amount.</p>
           <label htmlFor="label">Label</label>
@@ -83,7 +84,7 @@ const Budget = () => {
             Add To Budget
           </button>
         </div>
-        <hr />
+        <hr /> */}
         <div className={styles.box}>
           <h2>Reset Your Budget</h2>
           <p>Resets your budget back to 0</p>

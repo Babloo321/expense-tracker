@@ -5,28 +5,47 @@ const Expense = () => {
   const [expense, setExpense] = useState({
     amount: 0,
     category: '',
-    label: '',
   });
 
   const handleResetBudget = () => {
     setExpense({
       amount: 0,
       category: '',
-      label: '',
     });
+    localStorage.removeItem('expense');
+    localStorage.removeItem('label');
+  };
+
+  const [label, setLabel] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleLabelChange = (e) => {
+    setInputValue(e.target.value);
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setExpense({ ...expense, [name]: value });
+    setExpense((prevExpense) => ({
+      ...prevExpense,
+      [name]: value,
+    }));
   };
 
   const handleAddToBudget = () => {
-    setExpense((prevBudget) => ({
-      ...prevBudget,
-      amount: Number(prevBudget.amount) + parseFloat(Number(expense.amount)),
-    }));
-    localStorage.setItem('expense', JSON.stringify(expense));
+    setExpense((prevExpense) => {
+      const updatedAmount = parseFloat(prevExpense.amount) + parseFloat(expense.amount);
+      const updatedExpense = { ...prevExpense, amount: updatedAmount };
+      localStorage.setItem('expense', JSON.stringify(updatedExpense));
+      return updatedExpense;
+    });
+
+    setLabel((prevLabel) => {
+      const updatedLabel = [...prevLabel, inputValue];
+      localStorage.setItem('label', JSON.stringify(updatedLabel));
+      return updatedLabel;
+    });
+
+    setInputValue(''); // Clear the input after adding to the label
   };
 
   return (
@@ -40,8 +59,8 @@ const Expense = () => {
             type="text"
             name="label"
             placeholder="Ex: Christmas bonus"
-            value={expense.label}
-            onChange={handleInputChange}
+            value={inputValue}
+            onChange={handleLabelChange}
             className={styles.input}
           />
           <label htmlFor="amount">Amount</label>
@@ -53,17 +72,28 @@ const Expense = () => {
             onChange={handleInputChange}
             className={styles.input}
           />
-          
         </div>
         <hr />
         <div className={styles.box}>
           <h2>Add a Category to Your Expense</h2>
           <label htmlFor="category">Select a Category</label>
-          <select name='category' className={styles.select} onChange={handleInputChange}>
-            <option value="" disabled selected hidden>Select a Category or Create a new one</option>
-            <option value="Entertainment" className={styles.option}>Entertainment</option>
-            <option value="Groceries" className={styles.option}>Groceries</option>
-            <option value="Uncategorized" className={styles.option}>Uncategorized</option>
+          <select
+            name="category"
+            className={styles.select}
+            onChange={handleInputChange}
+          >
+            <option value="" disabled selected hidden>
+              Select a Category or Create a new one
+            </option>
+            <option value="Entertainment" className={styles.option}>
+              Entertainment
+            </option>
+            <option value="Groceries" className={styles.option}>
+              Groceries
+            </option>
+            <option value="Uncategorized" className={styles.option}>
+              Uncategorized
+            </option>
           </select>
           <button onClick={handleAddToBudget} className={styles.button}>
             Add To Expense

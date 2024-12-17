@@ -1,26 +1,27 @@
-*{
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
 }
-.container{
+
+.container {
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 86vh;
   max-height: auto;
   gap: 1rem;
   background-color: var(--background-color);
   color: var(--text-color);
   min-width: 20%;
   max-width: 30%;
-  border-bottom-width: 1px;
+  /* border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--text-color);
+  border-bottom-color: var(--text-color); */
   padding: 1rem;
-  overflow: hidden;
+  overflow: hidden; /* This hides overflowing content */
 }
 
-.select_button{
+.select_button {
   background-color: var(--red-color);
   color: var(--text_color);
   font-weight: bold;
@@ -28,10 +29,11 @@
   border-radius: 60px;
   text-align: center;
   font-size: 1.1rem;
-  overflow: hidden;
+  overflow: hidden; /* This hides overflowing content */
 }
-.button{
-  overflow: hidden;
+
+.button {
+  overflow: hidden; /* This hides overflowing content */
   cursor: pointer;
   border-radius: 60px;
   background-color: var(--text-color);
@@ -39,5 +41,4 @@
   color: var(--red-color);
   font-weight: bold;
   text-align: center;
-  
 }

@@ -92,7 +92,7 @@ const Budget = () => {
             Reset Budget
           </button>
 
-          <h3>Current Budget: ${budget}</h3>
+          <h3>Current Budget: ${localStorage.getItem("budget")}</h3>
         </div>
       </div>
     </div>

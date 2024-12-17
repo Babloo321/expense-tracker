@@ -9,9 +9,9 @@
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: var(--text-color);
-  border-bottom-width: 1px;
+  /* border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--text-color);
+  border-bottom-color: var(--text-color); */
 }
 
 .container {

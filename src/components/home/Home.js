@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 function Home() {
-  const [expense, setExpense] = useState({});
+  const [expense, setExpense] = useState({ amounts: [], categories: '' });
   const [budget, setBudget] = useState(0);
-  const [label,setLabel] = useState([]);
+  const [label, setLabel] = useState([]);
 
   useEffect(() => {
-    const storeExpense = localStorage.getItem('expense');
-    if (storeExpense) {
-      setExpense(JSON.parse(storeExpense));
+    const storedExpense = localStorage.getItem('expense');
+    if (storedExpense) {
+      setExpense(JSON.parse(storedExpense));
     }
     const storeBudget = localStorage.getItem('budget');
     if (storeBudget) {
@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   const data = [
-    { name: 'Expense', value: parseFloat(expense.amount) || 0 },
+    { name: 'Expense', value: expense.amounts.length > 0 ? expense.amounts.reduce((acc, curr) => acc + curr, 0) : 0 },
     { name: 'Remaining Budget', value: budget },
   ];
   const COLORS = ['#FF6384', '#36A2EB'];
@@ -35,7 +35,10 @@ function Home() {
         <h1 className={styles.balance}>
           YOUR BALANCE IS: $
           <span className={styles.amount}>
-            {expense.amount && budget ? budget - expense.amount : 0}
+            {/* {budget && expense.amounts.length > 0
+              ? budget - expense.amounts.reduce((acc, curr) => acc + curr, 0)
+              : budget ? budget : 0} */}
+              {budget}
           </span>
         </h1>
 
@@ -45,26 +48,32 @@ function Home() {
           </div>
 
           <div className={styles.expenses}>
-            <h2>Expenses</h2> <p>${expense.amount ? expense.amount : 0}</p>
+            <h2>Expenses</h2>{' '}
+            <p>
+              ${' '}
+              {expense.amounts.length > 0
+                ? expense.amounts.reduce((acc, curr) => acc + curr, 0)
+                : 0}
+            </p>
           </div>
         </div>
-<hr />
-    <div className={styles.chartHistory}>
-      
-        <div className={styles.transactionHistory}>
-          <h3>Transaction History</h3>
+        <hr />
+        <div className={styles.chartHistory}>
+          <div className={styles.transactionHistory}>
+            <h3>Transaction History</h3>
 
-          <ul>
-            {label.map((item, index) => (
-              <li key={index}>
-                <span>{item}</span>
-                <span>${expense.amount ? expense.amount : 0}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+            <ul>
+              {label.map((item, index) => (
+                <li key={index}>
+                  <span>{item}</span>
+                  <span>{expense.categories.length > 0 ? expense.categories[index] === '' ? 'Uncategorized' : expense.categories[index] : 'Uncategorized'}</span>
+                  <span>${expense.amounts.length > 0 ? expense.amounts[index] : 0}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className={styles.pieChart}>
+          <div className={styles.pieChart}>
             <h2>Budget vs Expense</h2>
             <PieChart width={400} height={400}>
               {' '}
@@ -88,9 +97,7 @@ function Home() {
               <Tooltip /> <Legend />{' '}
             </PieChart>
           </div>
-
-      </div>
-
+        </div>
       </div>
     </div>
   );

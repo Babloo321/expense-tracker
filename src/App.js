@@ -28,7 +28,7 @@ const RenderComponent = ({ index }) => {
       break;
   }
 };
-const buttons = ['Home', 'Add an Expense',"Add/Update Your Budget", "View Spending in Categories"];
+const buttons = ['Home', 'Expenses',"Budgets", "Categories"];
 function App() {
   const [isSelected, setIsSelected] = useState(0);
   return (

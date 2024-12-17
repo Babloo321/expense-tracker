@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import styles from './styles.module.css';
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    setDarkMode(isDarkMode);
+    document.documentElement.classList.toggle('dark_mode', isDarkMode);
+  }, []);
   const toggleTheme = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle('dark_mode', !darkMode);
+    localStorage.setItem('darkMode', !darkMode);
   };
 
   return (

@@ -23,7 +23,7 @@
 
 .select_button {
   background-color: var(--red-color);
-  color: var(--text_color);
+  color: var(--background-color);
   font-weight: bold;
   padding: 10px 0;
   border-radius: 60px;
@@ -41,4 +41,17 @@
   color: var(--red-color);
   font-weight: bold;
   text-align: center;
+}
+.icon{
+  display: none;
+}
+
+@media screen and (max-width: 668px) {
+  .icon{
+    display: block;
+    font-size: 2rem;
+  }
+  .text{
+    display: none;
+  }
 }

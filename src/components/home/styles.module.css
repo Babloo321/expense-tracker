@@ -83,14 +83,17 @@
 }
 
 .transactionHistory li {
+  
+  font-weight: bold;
   background-color: #2e2e2e;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 8px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
+  text-align: center;
+  color: var(--text-color);
 }
-
 .pieChart {
   flex: 1;
   text-align: center;
@@ -101,3 +104,63 @@
 }
 
 
+@media only screen and (max-width: 600px){
+  .dashboard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+    .summary {
+      justify-content:center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 20px;
+      margin-right: 60px;
+      overflow: hidden;
+    }
+    
+    .incomeBudget, .expenses {
+      background-color: #2e2e2e;
+      padding: 20px;
+      border-radius: 8px;
+      width: 50%;
+      height: 130px;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .incomeBudget h2, .expenses h2 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: var(--red-color);
+    }
+    .incomeBudget p, .expenses p {
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: green;
+    }
+    .expenses p{
+      transform: translateY(22px);
+    }
+
+    hr{
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    
+.chartHistory{
+  width: 90%;
+  margin: 0 auto;
+  margin-right: 100px;
+  flex-direction: column;
+}
+.transactionHistory {
+  text-align: center;
+  flex: 1;
+  margin-bottom: 20px;
+}
+}

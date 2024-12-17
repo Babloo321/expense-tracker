@@ -3,10 +3,12 @@ import styles from './styles.module.css'
 import { FaBook } from "react-icons/fa6";
 import ThemeToggle from '../theme/ThemeToggle';
 function Header() {
+  const handleLogoClick = () => {
+    window.location.reload();
+  }
   return (
-
     <div className={styles.header}>
-      <FaBook className={styles.icon}/> <h1 className={styles.heading}>Expense Tracker</h1>
+      <FaBook className={styles.icon} onClick={handleLogoClick}/> <h1 className={styles.heading}>Expense Tracker</h1>
       {/* <TbBulb className={styles.icon}/> */}
       <ThemeToggle className={styles.icon}/>
 

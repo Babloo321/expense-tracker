@@ -44,7 +44,8 @@ function Home() {
 
         <div className={styles.summary}>
           <div className={styles.incomeBudget}>
-            <h2>Income / Budget</h2> <p>${budget ? budget : 0}</p>
+            <h2>Income / Budget</h2> 
+            <p>${budget ? budget : 0}</p>
           </div>
 
           <div className={styles.expenses}>

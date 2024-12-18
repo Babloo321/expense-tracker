@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;box-sizing: border-box;
 }
+
+
 :root {
   --background-color: white;
   --text-color: black;
@@ -34,7 +36,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-color);
   color: var(--text-color);
-  overflow-x: hidden;
 }
 
 code {

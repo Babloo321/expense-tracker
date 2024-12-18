@@ -1,4 +1,5 @@
 .header{
+  width: 100%;
   width: var(--body-width);
   margin: 0;
   padding: 1rem 0;
@@ -25,6 +26,7 @@
     min-width: 298px;
     max-width: 320px;
     padding: 0.5rem;
+    margin: 0;
     justify-content: space-around;
     align-items: center;
     /* background: radial-gradient(circle, #FFA726, #FF7043); */

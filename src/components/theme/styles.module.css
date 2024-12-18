@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 320px) {
   .theme_toggle_button{
-    transform: translate(-6px, 4px);
+    transform: translate(-2px, 4px);
   }
   .theme_toggle_button .moon, .theme_toggle_button .sun{
 overflow: hidden;

@@ -1,7 +1,20 @@
+/* Global CSS (e.g., index.css or App.css) */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body {
+  overflow: hidden;
+} */
+
+body::-webkit-scrollbar{
+  overflow: hidden;
+}
 
 .container {
-  min-height: 50vh;
-  max-height: auto;
+  min-height: 697px;
+  max-height: 1100px;
   display: flex;
   flex-direction: row;
   width: 100%; 
@@ -15,6 +28,8 @@
   .container{
     min-width: 298px;
     max-width: 320px;
+    min-height: 480px;
+    max-height: 1100px;
     flex-direction: column;
     overflow: hidden;
   }

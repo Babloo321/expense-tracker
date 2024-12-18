@@ -3,8 +3,8 @@
   color: var(--text-color);
   min-width: 80%;
   max-width: 70%;
-  min-height: 81vh;
-  max-height: auto;
+  min-height: 697px;
+  max-height: 800px;
   overflow-y: hidden;
   border-left-width: 1px;
   border-left-style: solid;
@@ -159,8 +159,8 @@
     overflow: hidden;
     min-width: 298px;
     max-width: 320px;
-    min-height: 85vh;
-    max-height: auto;
+    min-height: 697px;
+    max-height: 1000px;
     border: none;
   }
 
@@ -168,8 +168,8 @@
     overflow: hidden;
     min-width: 298px;
     max-width: 320px;
-    min-height: 85vh;
-    max-height: auto;
+    min-height: 697px;
+    max-height: 1000px;
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -203,8 +203,7 @@
     flex-direction: row;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 0;
-    margin-left: 60px;
+    margin: 0;
   }
 
   .incomeBudget, .expenses {
@@ -225,7 +224,7 @@
   }
 
   .incomeBudget h2, .expenses h2, .incomeBudget p, .expenses p {
-    margin-bottom: 0;
+    margin: 0;
     font-size: 1rem;
     padding: 5px 0;
     color: var(--text-color);
@@ -247,21 +246,22 @@
     display: none;
   }
 
-  .chartHistory .transactionHistory, .pieChart {
+  .chartHistory {
     min-width: 298px;
     max-width: 320px;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 0.2rem;
-    align-items: flex-start;
+    align-items: center;
     overflow: hidden;
   }
 
   .transactionHistory h3 {
     margin-top: 12px;
+    text-align: center;
   }
 
   .transactionHistory li {
@@ -280,7 +280,7 @@
   .pieChart .pie {
     overflow: hidden;
     cursor: pointer;
-    transform: translate(-8px, -10px);
+    transform: translate(0);
   }
   .pieChart h2{
     margin-left: 26px;

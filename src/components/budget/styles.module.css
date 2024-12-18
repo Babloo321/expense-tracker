@@ -1,3 +1,9 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+scrollbar-width: none;
+}
 .budget{
   background-color: var(--background-color);
   color: var(--text-color);
@@ -83,7 +89,7 @@ h2 {
 }
 
 
-@media  screen and (max-width: 320px) {
+@media  screen and (max-width: 480px) {
   *{
     margin: 0;
     padding: 0;
@@ -91,8 +97,10 @@ h2 {
   }
   .budget{
     min-width: 298px;
-    max-width: 320px;
+    max-width: 460px;
+    margin: 0 10px;
     border: none;
+    overflow: auto;
   }
   
   .container{

@@ -1,3 +1,9 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+scrollbar-width: none;
+}
 .categories{
   background-color: var(--background-color);
   color: var(--text-color);
@@ -54,11 +60,11 @@ cursor: pointer;
   font-weight: bold;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .categories{
-    overflow: hidden;
+    overflow: auto;
     min-width: 298px;  
-    max-width: 320px;
+    max-width: 480px;
     border: none;
     justify-content: center;
     align-items: center;
@@ -68,8 +74,8 @@ cursor: pointer;
     margin-bottom: 12px;
   }
   .categories .budget{
-    min-width: 200x;
-    max-width: 300px;
+    min-width: 298x;
+    max-width: 450px;
   }
   .categoryContainer{
     min-width: 80%;
@@ -83,8 +89,8 @@ cursor: pointer;
     gap: 6px;
   }
   .categoryContainer .categoryItem{
-    min-width: 100px;
-    max-width: 180px;
+    min-width: 165px;
+    max-width: 220px;
     padding: 10px 8px;
   }
   .budget{

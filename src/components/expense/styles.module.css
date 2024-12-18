@@ -1,3 +1,9 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+scrollbar-width: none;
+}
 .budget{
   background-color: var(--background-color);
   color: var(--text-color);
@@ -101,7 +107,7 @@ label::after{
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   *{
     margin: 0;
     padding: 0;
@@ -109,28 +115,25 @@ label::after{
   }
   .budget{
     min-width: 298px;
-    max-width: 320px;
+    max-width: 480px;
     border: none;
+    overflow: auto;
   }
   .container{
     width: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: auto;
   }
   .container .box h2{
     font-size: 1.2rem;
   }
-  .box .input{
-    width: 280px;
+  .box .input, .box .select{
+    width: 300px;
     height: 35px;
-    margin: 5px auto;
+    margin: 5px 0;
   }
-  .box .select{
-    width: 280px;
-    height: 35px;
-    margin: 5px auto;
-  }
+
   .box p{
     transform: translateY(-4px);
   }

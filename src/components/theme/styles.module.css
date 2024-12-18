@@ -9,13 +9,17 @@
   transition: color 0.3s ease;
   color: var(--text-color);
 }
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+scrollbar-width: none;
+}
 
-
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .theme_toggle_button{
     transform: translate(-2px, 4px);
   }
   .theme_toggle_button .moon, .theme_toggle_button .sun{
-overflow: hidden;
+overflow: auto;
   }
 }

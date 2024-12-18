@@ -1,4 +1,14 @@
-.header{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.header {
   width: 100%;
   width: var(--body-width);
   margin: 0;
@@ -10,28 +20,29 @@
   border: 1px solid var(--text-color);
   /* border: 1px solid var(black); */
 }
-.heading{
+.heading {
   color: var(--text-color);
   font-family: var(--heading-font-family);
 }
-.icon{
+.icon {
   font-size: 2rem;
   color: var(--text-color);
   padding: 0 2rem;
   cursor: pointer;
 }
 
-@media screen and (max-width: 320px) {
-  .header{
+@media screen and (max-width: 480px) {
+  .header {
+    overflow: auto;
     min-width: 298px;
-    max-width: 320px;
+    max-width: 480px;
     padding: 0.5rem;
     margin: 0;
     justify-content: space-around;
     align-items: center;
     /* background: radial-gradient(circle, #FFA726, #FF7043); */
     /* background: radial-gradient(circle, #42A5F5, #1E88E5); */
-    background: radial-gradient(circle, #8E24AA, #4A148C);
+    background: radial-gradient(circle, #8e24aa, #4a148c);
     /* background: radial-gradient(circle, #66BB6A, #43A047); */
     /* background: radial-gradient(circle, #FFCCBC, #FFAB91); */
     border: none;
@@ -39,7 +50,7 @@
     /* background: radial-gradient(circle, #29B6F6, #0288D1); */
   }
 
-  .heading{
+  .heading {
     font-size: 22px;
     text-align: center;
     /* color: var(--red-color); */
@@ -48,8 +59,8 @@
     padding: 0;
     margin: 0;
   }
-  .icon{
-    overflow: hidden;
+  .icon {
+    overflow: auto;
     font-size: 2rem;
     color: wheat;
     cursor: pointer;

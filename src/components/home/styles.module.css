@@ -1,3 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  overflow: auto;
+scrollbar-width: none;
+}
 .home{
   background-color: var(--background-color);
   color: var(--text-color);
@@ -96,84 +107,26 @@
   align-items: center;
 }
 
-
-@media only screen and (max-width: 600px){
-  .dashboard{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-    .summary {
-      justify-content:center;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 20px;
-      margin-right: 60px;
-      overflow: hidden;
-    }
-    
-    .incomeBudget, .expenses {
-      background-color: #2e2e2e;
-      padding: 20px;
-      border-radius: 8px;
-      width: 50%;
-      height: 130px;
-      text-align: center;
-      overflow: hidden;
-    }
-    
-    .incomeBudget h2, .expenses h2 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: var(--red-color);
-    }
-    .incomeBudget p, .expenses p {
-      margin-bottom: 5px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: green;
-    }
-
-    hr{
-      width: 60%;
-      margin: 0 auto;
-    }
-
-    
-.chartHistory{
-  width: 90%;
-  margin: 0 auto;
-  margin-right: 100px;
-  flex-direction: column;
-}
-.transactionHistory {
-  text-align: center;
-  flex: 1;
-  margin-bottom: 20px;
-}
-}
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 480px) {
   .home {
-    overflow: hidden;
+    overflow: auto;
     min-width: 298px;
-    max-width: 320px;
-    min-height: 697px;
-    max-height: 1000px;
+    max-width: 480px;
+    min-height: 50vh;
+    max-height: auto;
     border: none;
+    /* overflow: auto; */
   }
 
   .dashboard {
     overflow: hidden;
     min-width: 298px;
-    max-width: 320px;
-    min-height: 697px;
-    max-height: 1000px;
-    margin: 0;
+    max-width: 480px;
+    min-height: 50vh;
+    max-height: auto;
+    margin: 20px auto;
     padding: 0;
     color: var(--text-color);
-    padding: 20px;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -186,12 +139,13 @@
     padding: 0;
     font-size: 18px;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
   }
 
   .amount {
     margin-bottom: 10px;
     margin-left: 0;
+    text-align: left;
   }
 
   .rupees {
@@ -200,10 +154,11 @@
   }
 
   .summary {
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     gap: 12px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .incomeBudget, .expenses {
@@ -212,27 +167,30 @@
     padding: 0;
     margin: 0;
     border-radius: 8px;
-    min-width: 130px;
-    max-width: 160px;
+    /* min-width: 130px;
+    max-width: 160px; */
+    min-width: 30%;
+    max-width: 45%;
+    margin: 0 auto;
     min-height: 50px;
     max-height: 100px;
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   .incomeBudget h2, .expenses h2, .incomeBudget p, .expenses p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 5px 0;
     color: var(--text-color);
     font-weight: 400;
   }
 
   .incomeBudget .down, .expenses .up {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     padding: 5px;
     font-weight: bold;
     color: green;
@@ -248,8 +206,8 @@
 
   .chartHistory {
     min-width: 298px;
-    max-width: 320px;
-    margin: 0;
+    max-width: 90%;
+    margin: 0 auto;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -261,20 +219,20 @@
 
   .transactionHistory h3 {
     margin-top: 12px;
-    text-align: center;
+    text-align:center;
   }
 
   .transactionHistory li {
     margin: 5px 0;
     padding: 10px 12px;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 18px;
+    font-weight: 400;
     background-color: var(--hover-background-color);
     color: var(--hover-text-color);
   }
 
   .liRupees {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .pieChart .pie {
@@ -283,7 +241,8 @@
     transform: translate(0);
   }
   .pieChart h2{
-    margin-left: 26px;
+    font-size: 1.5rem;
+    text-align: center;
     margin-top: 22px;
   }
 }

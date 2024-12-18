@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { FaArrowCircleUp } from "react-icons/fa";
+import { FaArrowCircleDown } from "react-icons/fa";
+import { FaIndianRupeeSign } from "react-icons/fa6";
+
 function Home() {
   const [expense, setExpense] = useState({ amounts: [], categories: '' });
   const [budget, setBudget] = useState(0);
@@ -31,33 +35,39 @@ function Home() {
   // Your data here backgroundColor: ['#36A2EB', '#FF6384'], // Colors for each section }, ],
   return (
     <div className={styles.home}>
+
       <div className={styles.dashboard}>
+
         <h1 className={styles.balance}>
-          YOUR BALANCE IS: $
+          Balance: <FaIndianRupeeSign className={styles.rupees}/>
           <span className={styles.amount}>
-            {/* {budget && expense.amounts.length > 0
-              ? budget - expense.amounts.reduce((acc, curr) => acc + curr, 0)
-              : budget ? budget : 0} */}
               {budget}
           </span>
         </h1>
 
         <div className={styles.summary}>
           <div className={styles.incomeBudget}>
-            <h2>Income / Budget</h2> 
-            <p>${budget ? budget : 0}</p>
+          <FaArrowCircleDown className={styles.down}/>
+          <div className={styles.expenses.text}>
+            <h2>Budget</h2> 
+            <p><FaIndianRupeeSign className={styles.rupees}/>{budget ? budget : 0}</p>
+            </div>
           </div>
 
           <div className={styles.expenses}>
+          <FaArrowCircleUp className={styles.up}/>
+          <div className={styles.expenses.text}>
             <h2>Expenses</h2>{' '}
             <p>
-              ${' '}
+              <FaIndianRupeeSign className={styles.rupees}/>{' '}
               {expense.amounts.length > 0
                 ? expense.amounts.reduce((acc, curr) => acc + curr, 0)
                 : 0}
             </p>
+            </div>
           </div>
         </div>
+
         <hr />
         <div className={styles.chartHistory}>
           <div className={styles.transactionHistory}>
@@ -68,7 +78,7 @@ function Home() {
                 <li key={index}>
                   <span>{item}</span>
                   <span>{expense.categories.length > 0 ? expense.categories[index] === '' ? 'Uncategorized' : expense.categories[index] : 'Uncategorized'}</span>
-                  <span>${expense.amounts.length > 0 ? expense.amounts[index] : 0}</span>
+                  <span><FaIndianRupeeSign className={styles.liRupees}/>{expense.amounts.length > 0 ? expense.amounts[index] : 0}</span>
                 </li>
               ))}
             </ul>
@@ -76,26 +86,25 @@ function Home() {
 
           <div className={styles.pieChart}>
             <h2>Budget vs Expense</h2>
-            <PieChart width={400} height={400}>
-              {' '}
+            <PieChart width={300} height={300} className={styles.pie}>
               <Pie
                 data={data}
-                cx={200}
-                cy={200}
+                cx={150}
+                cy={150}
                 labelLine={false}
-                outerRadius={150}
+                outerRadius={110}
                 fill="#8884d8"
                 dataKey="value"
+                className={styles.pie}
               >
-                {' '}
                 {data.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
                   />
-                ))}{' '}
-              </Pie>{' '}
-              <Tooltip /> <Legend />{' '}
+                ))}
+              </Pie>
+              <Tooltip /> <Legend />
             </PieChart>
           </div>
         </div>

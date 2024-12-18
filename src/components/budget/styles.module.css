@@ -9,9 +9,6 @@
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: var(--text-color);
-  /* border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--text-color); */
 }
 
 .container {
@@ -83,4 +80,49 @@ h2 {
   font-size: 14px;
   font-weight: 300;
   color: #a79f9f;
+}
+
+
+@media  screen and (max-width: 320px) {
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .budget{
+    min-width: 298px;
+    max-width: 320px;
+    border: none;
+  }
+  
+  .container{
+    width: 100%;
+    margin: 0;
+    padding: 0 6px;
+  }
+  hr{
+    margin: 0;
+    width: 100%;
+    display: block;
+  }
+  h2{
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  .input{
+    margin: 5px 0;
+    font-size: 18px;
+    width: 90%;
+  }
+  .button, .btn{
+    padding: 15px 5px;
+    width: 50%;
+  }
+  
+  .button:hover,.btn:hover {
+    opacity: 0.8;
+  }
+  .box p{
+    transform: translateY(-2px);
+  }
 }

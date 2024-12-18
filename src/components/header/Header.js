@@ -9,7 +9,6 @@ function Header() {
   return (
     <div className={styles.header}>
       <FaBook className={styles.icon} onClick={handleLogoClick}/> <h1 className={styles.heading}>Expense Tracker</h1>
-      {/* <TbBulb className={styles.icon}/> */}
       <ThemeToggle className={styles.icon}/>
 
     </div>

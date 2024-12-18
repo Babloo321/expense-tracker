@@ -5,7 +5,7 @@
   max-width: 70%;
   min-height: 81vh;
   max-height: auto;
-  overflow: hidden;
+  overflow-y: hidden;
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: var(--text-color);
@@ -28,7 +28,6 @@
   margin-bottom: 20px;
 }
 .amount{
-  margin-bottom: 20px;
   margin-left: 3px;
   color: var(--red-color);
 }
@@ -49,16 +48,10 @@
   text-align: center;
 }
 
-.incomeBudget h2, .expenses h2 {
+.incomeBudget h2, .expenses h2, .incomeBudget p, .expenses p  {
   margin-bottom: 10px;
   font-size: 1.8rem;
   color: var(--red-color);
-}
-.incomeBudget p, .expenses p {
-  margin-bottom: 5px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: green;
 }
 
 .chartHistory{
@@ -142,9 +135,6 @@
       font-weight: bold;
       color: green;
     }
-    .expenses p{
-      transform: translateY(22px);
-    }
 
     hr{
       width: 60%;
@@ -163,4 +153,137 @@
   flex: 1;
   margin-bottom: 20px;
 }
+}
+@media screen and (max-width: 320px) {
+  .home {
+    overflow: hidden;
+    min-width: 298px;
+    max-width: 320px;
+    min-height: 85vh;
+    max-height: auto;
+    border: none;
+  }
+
+  .dashboard {
+    overflow: hidden;
+    min-width: 298px;
+    max-width: 320px;
+    min-height: 85vh;
+    max-height: auto;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .balance {
+    padding: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .amount {
+    margin-bottom: 10px;
+    margin-left: 0;
+  }
+
+  .rupees {
+    font-size: 14px; /* Corrected spacing */
+    color: var(--text-color);
+  }
+
+  .summary {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 0;
+    margin-left: 60px;
+  }
+
+  .incomeBudget, .expenses {
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+    padding: 0;
+    margin: 0;
+    border-radius: 8px;
+    min-width: 130px;
+    max-width: 160px;
+    min-height: 50px;
+    max-height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .incomeBudget h2, .expenses h2, .incomeBudget p, .expenses p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    padding: 5px 0;
+    color: var(--text-color);
+    font-weight: 400;
+  }
+
+  .incomeBudget .down, .expenses .up {
+    font-size: 2.5rem;
+    padding: 5px;
+    font-weight: bold;
+    color: green;
+  }
+
+  .expenses .up {
+    color: var(--red-color);
+  }
+
+  hr {
+    display: none;
+  }
+
+  .chartHistory .transactionHistory, .pieChart {
+    min-width: 298px;
+    max-width: 320px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .transactionHistory h3 {
+    margin-top: 12px;
+  }
+
+  .transactionHistory li {
+    margin: 5px 0;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+  }
+
+  .liRupees {
+    font-size: 12px;
+  }
+
+  .pieChart .pie {
+    overflow: hidden;
+    cursor: pointer;
+    transform: translate(-8px, -10px);
+  }
+  .pieChart h2{
+    margin-left: 26px;
+    margin-top: 22px;
+  }
 }

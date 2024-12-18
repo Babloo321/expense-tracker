@@ -21,6 +21,7 @@ function Categories() {
         <p>Budget</p>
         <p>{budget}</p>
       </div>
+      <hr />
       <div className={styles.categoryContainer}>
         {expese.categories.map((category, index) => (
           <div key={index} className={styles.categoryItem}>

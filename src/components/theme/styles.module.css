@@ -1,9 +1,21 @@
 
 .theme_toggle_button {
+  overflow: hidden;
   background: none;
   border: none;
   font-size: 2rem;
+  margin: 0;padding: 0;
   cursor: pointer;
   transition: color 0.3s ease;
   color: var(--text-color);
+}
+
+
+@media screen and (max-width: 320px) {
+  .theme_toggle_button{
+    transform: translate(-6px, 4px);
+  }
+  .theme_toggle_button .moon, .theme_toggle_button .sun{
+overflow: hidden;
+  }
 }

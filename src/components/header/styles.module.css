@@ -19,3 +19,38 @@
   padding: 0 2rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 320px) {
+  .header{
+    min-width: 298px;
+    max-width: 320px;
+    padding: 0.5rem;
+    justify-content: space-around;
+    align-items: center;
+    /* background: radial-gradient(circle, #FFA726, #FF7043); */
+    /* background: radial-gradient(circle, #42A5F5, #1E88E5); */
+    background: radial-gradient(circle, #8E24AA, #4A148C);
+    /* background: radial-gradient(circle, #66BB6A, #43A047); */
+    /* background: radial-gradient(circle, #FFCCBC, #FFAB91); */
+    border: none;
+    /* background: radial-gradient(circle, #FFA726, #FF7043, #F4511E); */
+    /* background: radial-gradient(circle, #29B6F6, #0288D1); */
+  }
+
+  .heading{
+    font-size: 22px;
+    text-align: center;
+    /* color: var(--red-color); */
+    color: white;
+    font-family: var(--heading-font-family);
+    padding: 0;
+    margin: 0;
+  }
+  .icon{
+    overflow: hidden;
+    font-size: 2rem;
+    color: wheat;
+    cursor: pointer;
+    padding: 0;
+  }
+}

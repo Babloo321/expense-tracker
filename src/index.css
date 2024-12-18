@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;box-sizing: border-box;
+}
 :root {
   --background-color: white;
   --text-color: black;
@@ -10,11 +14,15 @@
   --text-font-family: 'Roboto', 'Arial', 'Helvetica' sans-serif;
   --button-font-family: 'Lato', 'Arial', 'Helvetica' sans-serif;
   --body-width: 100%;
+  --hover-background-color: #f5f5f5;
+  --hover-text-color: #333;
 }
 
 .dark_mode{
   --background-color: black;
   --text-color: white;
+  --hover-background-color: #333;
+  --hover-text-color: #f5f5f5;
 }
 
 body {

@@ -9,9 +9,6 @@
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: var(--text-color);
-  /* border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--text-color); */
   display: flex;
   flex-direction: column;
 }
@@ -50,9 +47,53 @@ cursor: pointer;
 }
 .categoryItem:hover, .budget:hover{
   background-color: var(--red-color);
-  color: var(--text-color);
+  color: #fff;
 }
 .categoryItem p, .budget p{
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+@media screen and (max-width: 320px) {
+  .categories{
+    overflow: hidden;
+    min-width: 298px;  
+    max-width: 320px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .categories h1{
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  .categories .budget{
+    min-width: 200x;
+    max-width: 300px;
+  }
+  .categoryContainer{
+    min-width: 80%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px 8px;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 12px 0;
+    padding: 0;
+    gap: 6px;
+  }
+  .categoryContainer .categoryItem{
+    min-width: 100px;
+    max-width: 180px;
+    padding: 10px 8px;
+  }
+  .budget{
+    margin: 0;
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+  }
+  hr{
+    width: 90%;
+    margin: 12px auto;
+  }
 }

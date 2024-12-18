@@ -19,7 +19,7 @@ const ThemeToggle = () => {
     // <div className={`app ${darkMode ? 'dark-mode' : 'light-mode'}`}>
     <div className={darkMode ? styles.dark_mode : styles.light_mode}>
       <button className={styles.theme_toggle_button} onClick={toggleTheme}>
-        {darkMode ? <FaSun /> : <FaMoon />}
+        {darkMode ? <FaSun className={styles.sun} /> : <FaMoon className={styles.moon} />}
       </button>
     </div>
   );

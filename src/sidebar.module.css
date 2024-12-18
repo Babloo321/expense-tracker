@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .container {
@@ -10,13 +11,9 @@
   min-height: 86vh;
   max-height: auto;
   gap: 1rem;
-  background-color: var(--background-color);
   color: var(--text-color);
   min-width: 20%;
   max-width: 30%;
-  /* border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--text-color); */
   padding: 1rem;
   overflow: hidden; /* This hides overflowing content */
 }
@@ -46,12 +43,60 @@
   display: none;
 }
 
-@media screen and (max-width: 668px) {
-  .icon{
-    display: block;
-    font-size: 2rem;
+
+@media screen and (max-width: 320px) {
+  .container{
+    overflow: hidden;
+    min-width: 298px;
+    max-width: 320px;
+    min-height: 50px;
+    max-height: 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
+    margin:0;
+    padding:0;
   }
-  .text{
-    display: none;
+
+  .button {
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding:0;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .button:hover {
+    background-color: var(--hover-background-color);
+    color: var(--hover-text-color);
+    padding: 12px 18px;
+    cursor: pointer;
+    transition:ease-out 0.3s;
+  }
+
+  .select_button {
+    overflow: hidden;
+    background-color: var(--background-color);
+    text-decoration: underline;
+    color: var(--red-color);
+    font-weight: bold;
+    padding: 10px 0;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .select_button:hover { 
+    /* background-color: var(--hover-background-color); */
+    background-color: var(--background-color);
+    /* color: var(--hover-text-color); */
+    color: magenta;
+    padding: 12px 18px;
+    cursor: pointer;
   }
 }

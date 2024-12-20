@@ -17,9 +17,10 @@ scrollbar-width: none;
 
 @media screen and (max-width: 480px) {
   .theme_toggle_button{
-    transform: translate(-2px, 4px);
+    transform: translate(-12px, 4px);
   }
   .theme_toggle_button .moon, .theme_toggle_button .sun{
+    font-size: 1.8rem;
 overflow: auto;
   }
 }

@@ -1,53 +1,25 @@
-import React, { useState } from 'react';
-import Sidebar from './Sidebar';
-import styles from './app.module.css';
-import Home from './components/home/Home.js'
-import Expense from './components/expense/Expense.js'
-import Budget from './components/budget/Budget.js';
-import Categories from './components/categories/Categories.js';
-import Header from './components/header/Header.js';
-const RenderComponent = ({ index }) => {
-  switch (index) {
-    case 0:
-      return <Home />
-      break;
-
-    case 1:
-      return <Expense />
-      break;
-
-      case 2:
-        return <Budget />
-        break;
-
-      case 3:
-        return <Categories />
-        break;
-
-    default:
-      break;
-  }
-};
-const buttons = ['Home', 'Expenses',"Budgets", "Categories"];
+import React from 'react'
+import ExpenseTracker from './components/expense-tracker/ExpenseTracker'  
+import Weather from './components/weather/Weather.js'
+import {Routes, Route } from 'react-router-dom';
+import Home from './components/home-page/HomePage.js'
+import WeatherSearch from './components/weather/weather-search/WeatherSearch.js';
+import MainHeader from './components/global/header/MainHeader.js';
+import Chat from './components/chat/Chat.js';
 function App() {
-  const [isSelected, setIsSelected] = useState(0);
   return (
-    <>
-    <Header />
-    <div className={styles.container}>
-    
-      <Sidebar
-      className={styles.Sidebar}
-        buttons={buttons}
-        isSelected={isSelected}
-        setIsSelected={setIsSelected}
-      />
-    
-      
-      <RenderComponent index={isSelected} className={styles.content} />
-    </div>
-    </>
-  );
+<>
+    <MainHeader />
+    {/* <Home /> */}
+    <Routes>
+    <Route path='/' element={<Home />} exact='true'/>
+        <Route path="/expense-tracker" element={<ExpenseTracker />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path='/weather-search' element={<WeatherSearch />} exact='true'/>
+        <Route path='/chat' element={<Chat />} exact='true'/>
+      </Routes>
+</>
+  )
 }
 
-export default App;
+export default App

@@ -1,0 +1,116 @@
+
+@media screen and (max-width: 480px) {
+.weatherContainer {
+  min-width: 298px;
+  max-width: 480px;
+  min-height: 100vh;
+  max-height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #3b3b98;
+  color: var(--text-color);
+  /* border-radius: 8px; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchForm {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weatherInfo{
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.weatherInfo .weatherIcon{
+  font-size: 6rem;
+  color: #fff;
+}
+.weatherInfo .temp{
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+}
+.weatherInfo .address{
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bolder;
+}
+.weatherInfo .image{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+}
+.clockContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  justify-content: center;
+  align-content: center;
+}
+.clockContainer .date{
+  color: var(--red-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.dateTime{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  gap: 1rem;
+}
+.dateTime p{
+  font-size: 1.3rem;
+}
+.searchInput {
+  color: #141414;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.searchButton {
+  padding: 0.5rem 1rem;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: #e67e22;
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.forecast {
+  margin-top: 2rem;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.forecastItem {
+  padding: 1rem;
+  background-color: #444;
+  border-radius: 8px;
+}
+}
